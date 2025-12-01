@@ -50,7 +50,6 @@
 <script>
     const BASE = "http://localhost:5000/api/reportes";
 
-    // GET todos
     function cargarReportes() {
         fetch(`${BASE}/`)
             .then(res => res.json())
@@ -59,7 +58,7 @@
             });
     }
 
-    // POST crear
+    // para crear el reporte
     function crearReporte() {
         
         const body = {
@@ -84,7 +83,7 @@
         .catch(e => console.error(e));
     }
 
-    // GET por dueño
+    // buscar por id del dueño
     function buscarPorDueno() {
         const id = document.getElementById("id_due").value;
         fetch(`${BASE}/dueno/${id}`)
@@ -92,7 +91,7 @@
             .then(data => document.getElementById("lista").textContent = JSON.stringify(data, null, 2));
     }
 
-    // GET por veterinario
+    // buscar por id del veterinario
     function buscarPorVet() {
         const id = document.getElementById("id_vete").value;
         fetch(`${BASE}/vet/${id}`)
@@ -100,7 +99,7 @@
             .then(data => document.getElementById("lista").textContent = JSON.stringify(data, null, 2));
     }
 
-    // GET por mascota
+    // buscar por id de la mascotita
     function buscarPorMascota() {
         const id = document.getElementById("id_mas").value;
         fetch(`${BASE}/mascota/${id}`)
@@ -108,7 +107,7 @@
             .then(data => document.getElementById("lista").textContent = JSON.stringify(data, null, 2));
     }
 
-    // PUT actualizar reporte
+    // actualizar los reportes
     function editarReporte() {
         const id = document.getElementById("edit_id").value;
 
